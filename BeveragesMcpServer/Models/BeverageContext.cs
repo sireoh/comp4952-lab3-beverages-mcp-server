@@ -7,3 +7,4 @@ namespace BeveragesMcpServer.Models;
 [JsonSerializable(typeof(List<Beverage>))]
 [JsonSerializable(typeof(Beverage))]
 internal sealed partial class BeverageContext : JsonSerializerContext { }
+

@@ -1,7 +1,0 @@
-{
-  "AI": {
-    "GitHubToken": "TOKEN_HERE",
-    "ModelName": "gpt-4o-mini"
-  },
-  "McpServerDockerCommand": "docker run -i --rm sireoh/studentsmcp"
-}

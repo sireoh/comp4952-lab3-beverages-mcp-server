@@ -15,10 +15,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Models/BeverageContext.cs" />
-    <None Include="Models/BeverageService.cs" />
-    <None Include="Models/BeverageTools.cs" />
-    <None Include="Models/Beverage.cs" />
+    <None Include="Models/StudentContext.cs" />
+    <None Include="Models/StudentService.cs" />
+    <None Include="Models/StudentTools.cs" />
   </ItemGroup>
 
   <ItemGroup>
