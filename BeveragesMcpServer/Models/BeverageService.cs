@@ -35,35 +35,6 @@ public class BeverageService
     return _beveragesCache;
   }
 
-  public async Task<Beverage?> GetBeverageByName(string name)
-  {
-    var beverages = await GetBeverages();
-
-    var nameParts = name.Split(' ', 2);
-    if (nameParts.Length != 2)
-    {
-      Console.WriteLine("Name does not contain two parts");
-      return null;
-    }
-
-    var firstName = nameParts[0].Trim();
-    var lastName = nameParts[1].Trim();
-
-    foreach (var s in beverages.Where(s => s.FirstName?.Contains(firstName, StringComparison.OrdinalIgnoreCase) == true))
-    {
-      Console.WriteLine($"Found partial first name match: '{s.FirstName}' '{s.LastName}'");
-    }
-
-    var beverage = beverages.FirstOrDefault(m =>
-    {
-      var firstNameMatch = string.Equals(m.FirstName, firstName, StringComparison.OrdinalIgnoreCase);
-      var lastNameMatch = string.Equals(m.LastName, lastName, StringComparison.OrdinalIgnoreCase);
-      return firstNameMatch && lastNameMatch;
-    });
-
-    return student;
-  }
-
   public async Task<Beverage?> GetBeverageById(int id)
   {
     var beverages = await GetBeverages();
@@ -85,16 +56,14 @@ public class BeverageService
     return filteredBeverages;
   }
 
-  public async Task<List<Beverage>> GetBeveragesByType(string type)
+
+  public async Task<Beverage?> GetBeveragesByTypeJson(string type)
   {
     var beverages = await GetBeverages();
-    var filteredBeverages = beverages.Where(s => s.Type?.Equals(type, StringComparison.OrdinalIgnoreCase) == true).ToList();
+    var beverage = beverages.FirstOrDefault(s => s.Type?.Equals(type, StringComparison.OrdinalIgnoreCase) == true);
 
-    Console.WriteLine(filteredBeverages.Count == 0
-        ? $"No beverages found for type: {type}"
-        : $"Found {filteredBeverages.Count} beverages for type: {type}");
-
-    return filteredBeverages;
+    Console.WriteLine(beverage == null ? $"No beverage found with type: {type}" : $"Found beverage: {beverage}");
+    return beverage;
   }
 
   public async Task<List<Beverage>> GetBeveragesByMainIngredient(string mainIngredient)
@@ -109,14 +78,14 @@ public class BeverageService
     return filteredBeverages;
   }
 
-  public async Task<List<Beverage>> GetBeveragesByOriginJson(string origin)
+  public async Task<List<Beverage>> GetBeveragesByOrigin(string origin)
   {
     var beverages = await GetBeverages();
     var filteredBeverages = beverages.Where(s => s.Origin?.Equals(origin, StringComparison.OrdinalIgnoreCase) == true).ToList();
 
     Console.WriteLine(filteredBeverages.Count == 0
-        ? $"No beverages found for origin: {origin}"
-        : $"Found {filteredBeverages.Count} beverages for origin: {origin}");
+        ? $"No beverages found from origin: {origin}"
+        : $"Found {filteredBeverages.Count} beverages from origin: {origin}");
 
     return filteredBeverages;
   }
