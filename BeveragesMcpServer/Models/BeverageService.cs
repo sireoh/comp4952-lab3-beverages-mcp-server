@@ -1,38 +1,45 @@
-using System;
-using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace BeveragesMcpServer.Models;
 
 public class BeverageService
 {
-    readonly HttpClient _httpClient = new();
     private List<Beverage>? _beveragesCache = null;
     private DateTime _cacheTime;
-    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(10); // adjust as needed
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(10);
 
-    private async Task<List<Beverage>> FetchBeveragesFromApi()
+    private async Task<List<Beverage>> FetchBeveragesFromFile()
     {
         try
         {
-            var response = await _httpClient.GetAsync("https://gist.githubusercontent.com/medhatelmasry/fab36e3fac4ddafac0f837c920741eae/raw/734f416e93967c02ce36d404916b06da6de5fa77/beverages.json");
-            if (response.IsSuccessStatusCode)
+            // Path is relative to the app base directory
+            var path = Path.Combine(AppContext.BaseDirectory, "Data", "beverages.json");
+
+            if (File.Exists(path))
             {
-                var beveragesFromApi = await response.Content.ReadFromJsonAsync<List<Beverage>>(BeverageContext.Default.ListBeverage);
-                return beveragesFromApi ?? [];
+                var json = await File.ReadAllTextAsync(path);
+
+                // Use System.Text.Json with source generator (fast) OR reflection fallback
+                return JsonSerializer.Deserialize(json, BeverageContext.Default.ListBeverage) ?? new List<Beverage>();
+            }
+            else
+            {
+                await Console.Error.WriteLineAsync($"Beverage file not found at {path}");
             }
         }
         catch (Exception ex)
         {
-            await Console.Error.WriteLineAsync($"Error fetching beverages from API: {ex.Message}");
+            await Console.Error.WriteLineAsync($"Error reading beverages.json: {ex.Message}");
         }
-        return [];
+
+        return new List<Beverage>();
     }
 
     public async Task<List<Beverage>> GetBeverages()
     {
         if (_beveragesCache == null || DateTime.UtcNow - _cacheTime > _cacheDuration)
         {
-            _beveragesCache = await FetchBeveragesFromApi();
+            _beveragesCache = await FetchBeveragesFromFile();
             _cacheTime = DateTime.UtcNow;
         }
         return _beveragesCache;
@@ -41,30 +48,24 @@ public class BeverageService
     public async Task<Beverage?> GetBeverageById(int id)
     {
         var beverages = await GetBeverages();
-        var beverage = beverages.FirstOrDefault(b => b.BeverageId == id);
-        Console.WriteLine(beverage == null ? $"No beverage found with ID {id}" : $"Found beverage: {beverage}");
-        return beverage;
+        return beverages.FirstOrDefault(b => b.BeverageId == id);
     }
 
     public async Task<List<Beverage>> GetBeveragesByType(string type)
     {
         var beverages = await GetBeverages();
-        var filtered = beverages.Where(b => b.Type?.Equals(type, StringComparison.OrdinalIgnoreCase) == true).ToList();
-        Console.WriteLine(filtered.Count == 0 ? $"No beverages found for type: {type}" : $"Found {filtered.Count} beverages for type: {type}");
-        return filtered;
+        return beverages.Where(b => b.Type?.Equals(type, StringComparison.OrdinalIgnoreCase) == true).ToList();
     }
 
     public async Task<List<Beverage>> GetBeveragesByOrigin(string origin)
     {
         var beverages = await GetBeverages();
-        var filtered = beverages.Where(b => b.Origin?.Equals(origin, StringComparison.OrdinalIgnoreCase) == true).ToList();
-        Console.WriteLine(filtered.Count == 0 ? $"No beverages found for origin: {origin}" : $"Found {filtered.Count} beverages for origin: {origin}");
-        return filtered;
+        return beverages.Where(b => b.Origin?.Equals(origin, StringComparison.OrdinalIgnoreCase) == true).ToList();
     }
 
     public async Task<string> GetBeveragesJson()
     {
         var beverages = await GetBeverages();
-        return System.Text.Json.JsonSerializer.Serialize(beverages);
+        return JsonSerializer.Serialize(beverages, BeverageContext.Default.ListBeverage);
     }
 }

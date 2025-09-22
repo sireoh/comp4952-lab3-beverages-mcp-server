@@ -1,0 +1,266 @@
+[
+  {
+    "BeverageId": 1,
+    "Name": "Coca-Cola",
+    "Type": "Soft Drink",
+    "MainIngredient": "Sugar",
+    "Origin": "United States",
+    "CaloriesPerServing": 140
+  },
+  {
+    "BeverageId": 2,
+    "Name": "Pepsi",
+    "Type": "Soft Drink",
+    "MainIngredient": "Sugar",
+    "Origin": "United States",
+    "CaloriesPerServing": 150
+  },
+  {
+    "BeverageId": 3,
+    "Name": "Green Tea",
+    "Type": "Tea",
+    "MainIngredient": "Green Tea Leaves",
+    "Origin": "China",
+    "CaloriesPerServing": 0
+  },
+  {
+    "BeverageId": 4,
+    "Name": "Espresso",
+    "Type": "Coffee",
+    "MainIngredient": "Coffee Beans",
+    "Origin": "Italy",
+    "CaloriesPerServing": 5
+  },
+  {
+    "BeverageId": 5,
+    "Name": "Smoothie",
+    "Type": "Fruit Drink",
+    "MainIngredient": "Fruit",
+    "Origin": "United States",
+    "CaloriesPerServing": 250
+  },
+  {
+    "BeverageId": 6,
+    "Name": "Pina Colada",
+    "Type": "Cocktail",
+    "MainIngredient": "Coconut Cream",
+    "Origin": "Puerto Rico",
+    "CaloriesPerServing": 245
+  },
+  {
+    "BeverageId": 7,
+    "Name": "Lemonade",
+    "Type": "Soft Drink",
+    "MainIngredient": "Lemon",
+    "Origin": "Ancient Egypt",
+    "CaloriesPerServing": 120
+  },
+  {
+    "BeverageId": 8,
+    "Name": "Milkshake",
+    "Type": "Dairy Drink",
+    "MainIngredient": "Milk",
+    "Origin": "United States",
+    "CaloriesPerServing": 350
+  },
+  {
+    "BeverageId": 9,
+    "Name": "Chai",
+    "Type": "Tea",
+    "MainIngredient": "Black Tea Leaves and Spices",
+    "Origin": "India",
+    "CaloriesPerServing": 150
+  },
+  {
+    "BeverageId": 10,
+    "Name": "Margarita",
+    "Type": "Cocktail",
+    "MainIngredient": "Tequila",
+    "Origin": "Mexico",
+    "CaloriesPerServing": 200
+  },
+  {
+    "BeverageId": 11,
+    "Name": "Matcha Latte",
+    "Type": "Tea",
+    "MainIngredient": "Matcha Powder",
+    "Origin": "Japan",
+    "CaloriesPerServing": 200
+  },
+  {
+    "BeverageId": 12,
+    "Name": "Sparkling Water",
+    "Type": "Water",
+    "MainIngredient": "Carbonated Water",
+    "Origin": "Various",
+    "CaloriesPerServing": 0
+  },
+  {
+    "BeverageId": 13,
+    "Name": "Kombucha",
+    "Type": "Fermented Tea",
+    "MainIngredient": "Tea and Sugar",
+    "Origin": "China",
+    "CaloriesPerServing": 30
+  },
+  {
+    "BeverageId": 14,
+    "Name": "Hot Chocolate",
+    "Type": "Hot Drink",
+    "MainIngredient": "Cocoa Beans",
+    "Origin": "South America",
+    "CaloriesPerServing": 200
+  },
+  {
+    "BeverageId": 15,
+    "Name": "Red Wine",
+    "Type": "Alcoholic Drink",
+    "MainIngredient": "Grapes",
+    "Origin": "Various",
+    "CaloriesPerServing": 125
+  },
+  {
+    "BeverageId": 16,
+    "Name": "Mojito",
+    "Type": "Cocktail",
+    "MainIngredient": "Rum",
+    "Origin": "Cuba",
+    "CaloriesPerServing": 150
+  },
+  {
+    "BeverageId": 17,
+    "Name": "Ginger Ale",
+    "Type": "Soft Drink",
+    "MainIngredient": "Ginger",
+    "Origin": "United States",
+    "CaloriesPerServing": 120
+  },
+  {
+    "BeverageId": 18,
+    "Name": "Black Coffee",
+    "Type": "Coffee",
+    "MainIngredient": "Coffee Beans",
+    "Origin": "Ethiopia",
+    "CaloriesPerServing": 5
+  },
+  {
+    "BeverageId": 19,
+    "Name": "Chamomile Tea",
+    "Type": "Herbal Tea",
+    "MainIngredient": "Chamomile Flowers",
+    "Origin": "Egypt",
+    "CaloriesPerServing": 0
+  },
+  {
+    "BeverageId": 20,
+    "Name": "Whiskey",
+    "Type": "Alcoholic Drink",
+    "MainIngredient": "Grain",
+    "Origin": "Ireland/Scotland",
+    "CaloriesPerServing": 100
+  },
+  {
+    "BeverageId": 21,
+    "Name": "Coconut Water",
+    "Type": "Water",
+    "MainIngredient": "Coconut",
+    "Origin": "Pacific Islands",
+    "CaloriesPerServing": 60
+  },
+  {
+    "BeverageId": 22,
+    "Name": "Root Beer",
+    "Type": "Soft Drink",
+    "MainIngredient": "Sarsaparilla Root",
+    "Origin": "United States",
+    "CaloriesPerServing": 160
+  },
+  {
+    "BeverageId": 23,
+    "Name": "Iced Tea",
+    "Type": "Cold Tea",
+    "MainIngredient": "Black Tea Leaves",
+    "Origin": "United States",
+    "CaloriesPerServing": 90
+  },
+  {
+    "BeverageId": 24,
+    "Name": "Latte",
+    "Type": "Coffee",
+    "MainIngredient": "Coffee and Milk",
+    "Origin": "Italy",
+    "CaloriesPerServing": 190
+  },
+  {
+    "BeverageId": 25,
+    "Name": "Herbal Tea",
+    "Type": "Tea",
+    "MainIngredient": "Various Herbs",
+    "Origin": "Worldwide",
+    "CaloriesPerServing": 0
+  },
+  {
+    "BeverageId": 26,
+    "Name": "Energy Drink",
+    "Type": "Soft Drink",
+    "MainIngredient": "Caffeine and Sugar",
+    "Origin": "Worldwide",
+    "CaloriesPerServing": 110
+  },
+  {
+    "BeverageId": 27,
+    "Name": "Beer",
+    "Type": "Alcoholic Drink",
+    "MainIngredient": "Barley and Hops",
+    "Origin": "Various",
+    "CaloriesPerServing": 150
+  },
+  {
+    "BeverageId": 28,
+    "Name": "Sangria",
+    "Type": "Alcoholic Drink",
+    "MainIngredient": "Red Wine and Fruit",
+    "Origin": "Spain",
+    "CaloriesPerServing": 180
+  },
+  {
+    "BeverageId": 29,
+    "Name": "Probiotic Drink",
+    "Type": "Fermented Drink",
+    "MainIngredient": "Milk or Plant-Based",
+    "Origin": "Worldwide",
+    "CaloriesPerServing": 60
+  },
+  {
+    "BeverageId": 30,
+    "Name": "Bubble Tea",
+    "Type": "Tea",
+    "MainIngredient": "Tea and Tapioca Pearls",
+    "Origin": "Taiwan",
+    "CaloriesPerServing": 200
+  },
+  {
+    "BeverageId": 31,
+    "Name": "Cider",
+    "Type": "Alcoholic Drink",
+    "MainIngredient": "Apples",
+    "Origin": "United Kingdom",
+    "CaloriesPerServing": 210
+  },
+  {
+    "BeverageId": 32,
+    "Name": "Tonic Water",
+    "Type": "Soft Drink",
+    "MainIngredient": "Quinine and Sugar",
+    "Origin": "United Kingdom",
+    "CaloriesPerServing": 130
+  },
+  {
+    "BeverageId": 33,
+    "Name": "Decaf Coffee",
+    "Type": "Coffee",
+    "MainIngredient": "Coffee Beans (Decaffeinated)",
+    "Origin": "Worldwide",
+    "CaloriesPerServing": 2
+  }
+]
