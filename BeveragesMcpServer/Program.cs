@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ModelContextProtocol.Server;
 using System.ComponentModel;
-using BeveragesMcpServer.Models;
+using BeveragesMcpServer.Tests;
 
 BeverageToolsTest.RunTests();
 

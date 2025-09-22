@@ -15,9 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Models/StudentContext.cs" />
-    <None Include="Models/StudentService.cs" />
-    <None Include="Models/StudentTools.cs" />
+    <Content Include="Data\beverages.json" CopyToOutputDirectory="Always" />
+    <None Include="Models/BeverageContext.cs" />
+    <None Include="Models/BeverageService.cs" />
+    <None Include="Models/BeverageTools.cs" />
   </ItemGroup>
 
   <ItemGroup>

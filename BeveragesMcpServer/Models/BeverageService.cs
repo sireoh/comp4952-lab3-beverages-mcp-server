@@ -13,16 +13,16 @@ public class BeverageService
   {
     try
     {
-      string fileName = "../Data/beverages.json";
+      string fileName = Path.Combine(AppContext.BaseDirectory, "Data", "beverages.json");
       string jsonString = File.ReadAllText(fileName);
       var beverages = System.Text.Json.JsonSerializer.Deserialize<List<Beverage>>(jsonString);
-      return beverages;
+      return beverages ?? new List<Beverage>();
     }
     catch (Exception ex)
     {
       await Console.Error.WriteLineAsync($"Error fetching beverages from JSON: {ex.Message}");
+      return new List<Beverage>();
     }
-    return [];
   }
 
   public async Task<List<Beverage>> GetBeverages()
@@ -55,7 +55,6 @@ public class BeverageService
 
     return filteredBeverages;
   }
-
 
   public async Task<Beverage?> GetBeveragesByTypeJson(string type)
   {

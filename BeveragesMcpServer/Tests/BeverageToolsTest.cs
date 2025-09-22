@@ -1,6 +1,7 @@
 using System;
+using BeveragesMcpServer.Models;
 
-namespace BeveragesMcpServer.Models;
+namespace BeveragesMcpServer.Tests;
 
 public class BeverageToolsTest
 {
@@ -13,14 +14,9 @@ public class BeverageToolsTest
         var beverages = BeverageTools.GetBeveragesJson();
         Console.WriteLine($"Got beverages list: {beverages}\n");
 
-        // Test GetBeverageCount
-        Console.WriteLine("Testing GetBeverageCount:");
-        var count = BeverageTools.GetBeverageCount();
-        Console.WriteLine($"Total beverages: {count}\n");
-
-        // Test GetBeverageJson with a name
-        Console.WriteLine("Testing GetBeverageJson by name:");
-        var beverageByName = BeverageTools.GetBeverageJson("Coffee");
+        // Test GetBeveragesByNameJson
+        Console.WriteLine("Testing GetBeveragesByNameJson:");
+        var beverageByName = BeverageTools.GetBeveragesByNameJson("Coffee");
         Console.WriteLine($"Got beverage by name: {beverageByName}\n");
 
         // Test GetBeverageByIdJson
@@ -32,16 +28,6 @@ public class BeverageToolsTest
         Console.WriteLine("Testing GetBeveragesByTypeJson:");
         var beveragesByType = BeverageTools.GetBeveragesByTypeJson("Hot");
         Console.WriteLine($"Got beverages by type: {beveragesByType}\n");
-
-        // Test GetBeveragesByFirstNameJson
-        Console.WriteLine("Testing GetBeveragesByFirstNameJson:");
-        var beveragesByFirstName = BeverageTools.GetBeveragesByFirstNameJson("Iced");
-        Console.WriteLine($"Got beverages by first name: {beveragesByFirstName}\n");
-
-        // Test GetBeveragesByLastNameJson
-        Console.WriteLine("Testing GetBeveragesByLastNameJson:");
-        var beveragesByLastName = BeverageTools.GetBeveragesByLastNameJson("Tea");
-        Console.WriteLine($"Got beverages by last name: {beveragesByLastName}\n");
 
         Console.WriteLine("All tests completed!");
     }
